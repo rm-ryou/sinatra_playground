@@ -6,3 +6,7 @@ gem 'sinatra'
 gem 'puma'
 
 gem 'zeitwerk'
+
+gem 'sinatra-activerecord'
+gem 'sqlite3'
+gem 'rake'
