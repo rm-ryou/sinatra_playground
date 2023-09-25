@@ -12,7 +12,7 @@
     <% @todos.each do |todo| %>
       <tr>
         <td><%= todo.name %></td>
-        <td><a href="#">Show</a></td>
+        <td><a href="/todos/<%= todo.id %>">Show</a></td>
         <td><a href="#">Edit</a></td>
         <td><a href="#">Destroy</a></td>
       </tr>
