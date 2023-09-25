@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/signup_style.css" />
+
+<h1>Sing Up</h1>
+<p>This is Sign up page.</p>
+<form action="/signup" method="post" class="form-example">
+  <div class="form-example">
+    <label for="user_name">Name</label>
+    <input id="user_name" name="user[name]" type="text" />
+  </div>
+  <div class="form-example">
+    <label for="user_password">Password</label>
+    <input id="user_password" name="user[password]" type="password" />
+  </div>
+  <div class="form-example">
+    <label for="user_password_confirmation">Confirmation</label>
+    <input id="user_password_confirmation" name="user[password_confirmation]" type="password" />
+  </div>
+  <div class="form-example">
+    <input class="btn btn-primary" name="commit" type="submit" value="Create my account" />
+  </div>
+</form>
