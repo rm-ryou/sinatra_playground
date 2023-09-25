@@ -46,10 +46,6 @@ class TodosController < ApplicationController
     end
   end
 
-  # PUT /todos/1
-  put '/todos/:id' do
-  end
-
   # DELETE /todos/:id
   delete '/todos/:id' do |id|
     todo = Todo.find(id)
