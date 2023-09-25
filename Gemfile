@@ -14,3 +14,6 @@ gem 'rake'
 gem 'irb'
 
 gem 'padrino'
+
+gem 'rack-test'
+gem 'test-unit'
