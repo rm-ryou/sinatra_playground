@@ -1,29 +1,40 @@
 class TodosController < ApplicationController
-  # GET /tasks
+  # GET /todos
   get '/todos' do
+    @todos = Todo.all
+    erb :'todos/index.html'
   end
 
-  # GET /tasks/1
-  get 'todos/:id' do
+  # GET /todos/new
+  get '/todos/new' do
+    @todo = Todo.new
+    erb :'todos/new.html'
   end
 
-  # GET /tasks/new
-  get 'tasks/new' do
+  # GET /todos/1
+  get '/todos/:id' do
   end
 
-  # GET /tasks/1/edit
-  get '/tasks/:id/edit' do
+  # GET /todos/1/edit
+  get '/todos/:id/edit' do
   end
 
-  # POST /tasks
-  post '/tasks' do
+  # POST /todos
+  post '/todos' do
+    puts params[:todos][:name]
+    @todo = Todo.new(name: params[:todos][:name])
+    if @todo.save
+      redirect '/todos'
+    else
+      redirect '/#'
+    end
   end
 
-  # PUT /tasks/1
-  put '/tasks/:id' do
+  # PUT /todos/1
+  put '/todos/:id' do
   end
 
-  # DELETE /tasks/:id
-  delete '/tasks/:id' do
+  # DELETE /todos/:id
+  delete '/todos/:id' do
   end
 end
