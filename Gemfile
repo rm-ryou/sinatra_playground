@@ -12,3 +12,5 @@ gem 'sqlite3'
 gem 'rake'
 
 gem 'irb'
+
+gem 'padrino'
