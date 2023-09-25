@@ -13,8 +13,14 @@
       <tr>
         <td><%= todo.name %></td>
         <td><a href="/todos/<%= todo.id %>">Show</a></td>
-        <td><a href="#">Edit</a></td>
-        <td><a href="#">Destroy</a></td>
+        <td><a href="/todos/<%= todo.id %>/edit">Edit</a></td>
+        <%# <td><%= link_to 'Destroy', "/todos/#{todo.id}", method: :delete %1></td> %>
+        <td>
+          <form action="/todos/<%= todo.id %>" method="POST">
+            <input type="hidden" name="_method" value="delete" />
+            <input class="btn btn-primary" type="submit" value="Delete" />
+          </form>
+        </td>
       </tr>
     <% end %>
   </tbody>

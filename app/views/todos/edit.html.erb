@@ -1,0 +1,11 @@
+<h1>Editing Todo</h1>
+
+<form action="/todos/<%= @todo.id %>" method="POST" >
+  <label for="todos">Edit Todo</label>
+  <input type="hidden" name="_method" value="patch" />
+  <input id="todos" name="todos[name]" type="string" />
+  <input name="commit" type="submit" value="Edit Todo" />
+</form>
+
+<a href="/todos/<%= @todo.id %>">Show</a> |
+<a href="/todos">Back</a>
