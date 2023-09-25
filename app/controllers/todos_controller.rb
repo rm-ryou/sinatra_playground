@@ -11,8 +11,11 @@ class TodosController < ApplicationController
     erb :'todos/new.html'
   end
 
+  # FIXME: nameだけでcontentがなければ必要ない→contentをテーブルに追加
   # GET /todos/1
   get '/todos/:id' do
+    @todo = Todo.find(params[:id])
+    erb :'todos/show.html'
   end
 
   # GET /todos/1/edit
@@ -26,7 +29,7 @@ class TodosController < ApplicationController
     if @todo.save
       redirect '/todos'
     else
-      redirect '/#'
+      redirect '/todos/new'
     end
   end
 
