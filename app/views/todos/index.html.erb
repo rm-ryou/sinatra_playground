@@ -1,0 +1,31 @@
+<h1>Todos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Todo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todos.each do |todo| %>
+      <tr>
+        <td><%= todo.name %></td>
+        <td><a href="/todos/<%= todo.id %>">Show</a></td>
+        <td><a href="/todos/<%= todo.id %>/edit">Edit</a></td>
+        <%# <td><%= link_to 'Destroy', "/todos/#{todo.id}", method: :delete %1></td> %>
+        <td>
+          <form action="/todos/<%= todo.id %>" method="POST">
+            <input type="hidden" name="_method" value="delete" />
+            <input class="btn btn-primary" type="submit" value="Delete" />
+          </form>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<a href="/todos/new">New Todo</a>
