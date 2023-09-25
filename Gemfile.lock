@@ -15,6 +15,9 @@ GEM
     concurrent-ruby (1.2.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    io-console (0.6.0)
+    irb (1.6.3)
+      reline (>= 0.3.0)
     mini_portile2 (2.8.4)
     minitest (5.20.0)
     mustermann (3.0.0)
@@ -26,6 +29,8 @@ GEM
     rack-protection (3.1.0)
       rack (~> 2.2, >= 2.2.4)
     rake (13.0.6)
+    reline (0.3.8)
+      io-console (~> 0.5)
     ruby2_keywords (0.0.5)
     sinatra (3.1.0)
       mustermann (~> 3.0)
@@ -46,6 +51,7 @@ PLATFORMS
   -darwin-22
 
 DEPENDENCIES
+  irb
   puma
   rake
   sinatra
