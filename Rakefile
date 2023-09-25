@@ -1,7 +1,7 @@
 require_relative './config/application'
 require 'sinatra/activerecord/rake'
 
-desc "start irb"
+desc "start console"
 task :console do
   sh %{bin/irb -r ./config/application.rb}
 end
