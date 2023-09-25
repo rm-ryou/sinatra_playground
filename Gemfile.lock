@@ -74,11 +74,14 @@ GEM
       mime-types (< 4)
       padrino-core (= 0.15.3)
     padrino-support (0.15.3)
+    power_assert (2.0.3)
     puma (6.3.1)
       nio4r (~> 2.0)
     rack (2.2.8)
     rack-protection (3.1.0)
       rack (~> 2.2, >= 2.2.4)
+    rack-test (2.1.0)
+      rack (>= 1.3)
     rake (13.0.6)
     reline (0.3.8)
       io-console (~> 0.5)
@@ -93,6 +96,8 @@ GEM
       sinatra (>= 1.0)
     sqlite3 (1.6.6)
       mini_portile2 (~> 2.8.0)
+    test-unit (3.6.1)
+      power_assert
     thor (1.2.2)
     tilt (2.3.0)
     timeout (0.4.0)
@@ -107,10 +112,12 @@ DEPENDENCIES
   irb
   padrino
   puma
+  rack-test
   rake
   sinatra
   sinatra-activerecord
   sqlite3
+  test-unit
   zeitwerk
 
 BUNDLED WITH
