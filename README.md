@@ -3,7 +3,10 @@
 #### setup
 install gem, create db
 ```sh
-bin/rake all
+bundle config set --local path './.bundle'
+bundle config set --local bin './bin'
+bundle install
+bin/rake setup:db
 ```
 
 #### running server
