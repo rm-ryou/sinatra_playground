@@ -1,7 +1,12 @@
 class TodosController < ApplicationController
+  # helpers SessionsHelper
+
   # GET /todos
   get '/todos' do
-    @todos = Todo.all
+    # redirect_to_logged_in
+    # current_user
+    @todos = Todo.where(user_id: @current_user)
+    # @todos = Todo.all
     erb :'todos/index.html'
   end
 
@@ -37,8 +42,8 @@ class TodosController < ApplicationController
 
   # POST /todos
   post '/todos' do
-    puts params[:todos][:name]
-    @todo = Todo.new(name: params[:todos][:name])
+    # redirect_to_logged_in
+    @todo = Todo.new(name: params[:todos][:name], user_id: @user.id)
     if @todo.save
       redirect '/todos'
     else
