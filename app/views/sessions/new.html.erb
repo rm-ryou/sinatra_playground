@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/session.css" />
+
+<div class="session-example">
+  <h1>Log In</h1>
+  <form action="/login" method="post">
+    <div class="session-item">
+      <label for="session_name"></label>
+      <input id="session_name" name="sessions[name]" type="text" placeholder="Your Name"></input>
+    </div>
+    <div class="session-item">
+      <label for="session_password"></label>
+      <input id="session_password" name="session[password]" type="password" placeholder="Password"></input>
+    </div>
+    <div class="session-button">
+      <input class="custom_btn" title="Log In" type="submit" value="Log In"></input>
+    </div>
+  </form>
+  <div class="session-footer">
+    <p><a href="/signup">Create an account</a>
+  </div>
+</div>
+

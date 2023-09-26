@@ -1,1 +1,15 @@
 <h1>Hello, World</h1>
+<% if logged_in? %>
+  <p>
+    Hi <%= current_user.name %>
+  </p>
+  <a href="/todos">Check Todo</a> |
+  <a href="/todos/new">New Todo</a> |
+  <a href="/logout">Log Out</a>
+<% else %>
+  <p>
+    Please login or create an account.
+  </p>
+  <a href="/login">Log In</a> |
+  <a href="/signup">Sing Up</a>
+<% end %>
