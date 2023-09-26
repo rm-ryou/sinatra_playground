@@ -17,3 +17,5 @@ gem 'padrino'
 
 gem 'rack-test'
 gem 'test-unit'
+
+gem 'sinatra-flash'
