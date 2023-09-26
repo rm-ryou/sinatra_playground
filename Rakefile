@@ -14,14 +14,12 @@ end
 task :s => [:server]
 
 namespace :setup do
-  desc "exec bundle install"
-  task :bundler do
-    sh <<-EOL, { verbose: false }
-      bundle config set --local path './.bundle'
-      bundle config set --local bin './bin'
-      bundle install
-    EOL
-  end
+  # desc "exec bundle install"
+  # task :bundler do
+  #   sh <<-EOL, { verbose: false }
+  #     bundle install
+  #   EOL
+  # end
 
   desc "setup database"
   task :db do
@@ -32,8 +30,9 @@ namespace :setup do
   end
 end
 
-desc "exec setup:bundler, setup:db"
-task :all => ["setup:bundler", "setup:db"] do
+desc "exec setup:db"
+# task :all => ["setup:bundler", "setup:db"] do
+task :all => ["setup:db"] do
   puts "install gem & setup database."
 end
 
