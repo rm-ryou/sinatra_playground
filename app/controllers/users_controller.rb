@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   get '/signup' do
+    flash[:blah] if flash[:blah]
     erb :'/users/new.html'
   end
 
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect '/todos'
     else
+      flash[:blah] = "Can't create account."
       redirect '/signup'
     end
   end
