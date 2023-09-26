@@ -94,6 +94,8 @@ GEM
     sinatra-activerecord (2.0.26)
       activerecord (>= 4.1)
       sinatra (>= 1.0)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     sqlite3 (1.6.6)
       mini_portile2 (~> 2.8.0)
     test-unit (3.6.1)
@@ -116,6 +118,7 @@ DEPENDENCIES
   rake
   sinatra
   sinatra-activerecord
+  sinatra-flash
   sqlite3
   test-unit
   zeitwerk
