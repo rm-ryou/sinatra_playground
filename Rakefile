@@ -13,3 +13,28 @@ task :server do
 end
 task :s => [:server]
 
+namespace :setup do
+  desc "exec bundle install"
+  task :bundler do
+    sh <<-EOL, { verbose: false }
+      bundle config set --local path './.bundle'
+      bundle config set --local bin './bin'
+      bundle install
+    EOL
+  end
+
+  desc "setup database"
+  task :db do
+    sh <<-EOL, { verbose: false }
+      rake db:drop
+      rake db:migrate
+    EOL
+  end
+end
+
+desc "exec setup:bundler, setup:db"
+task :all => ["setup:bundler", "setup:db"] do
+  puts "install gem & setup database."
+end
+
+task :default => :server
