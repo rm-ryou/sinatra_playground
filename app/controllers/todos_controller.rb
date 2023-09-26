@@ -1,12 +1,7 @@
 class TodosController < ApplicationController
-  # helpers SessionsHelper
-
   # GET /todos
   get '/todos' do
-    # redirect_to_logged_in
-    # current_user
     @todos = Todo.where(user_id: @current_user)
-    # @todos = Todo.all
     erb :'todos/index.html'
   end
 
@@ -20,7 +15,6 @@ class TodosController < ApplicationController
   # GET /todos/1
   get '/todos/:id' do |id|
     @todo = Todo.find(id)
-    # @todo = Todo.find(params[:id])
     erb :'todos/show.html'
   end
 
@@ -33,22 +27,13 @@ class TodosController < ApplicationController
   patch '/todos/:id' do |id|
     @todo = Todo.find(id)
     @todo.name = params[:todos][:name]
-    if @todo.save
-      redirect '/todos'
-    else
-      reidrect "/todos/#{id}/edit"
-    end
+    save_redirect_to("/todos/#{id}/edit")
   end
 
   # POST /todos
   post '/todos' do
-    # redirect_to_logged_in
     @todo = Todo.new(name: params[:todos][:name], user_id: @user.id)
-    if @todo.save
-      redirect '/todos'
-    else
-      redirect '/todos/new'
-    end
+    save_redirect_to("/todos/new")
   end
 
   # DELETE /todos/:id
@@ -57,5 +42,15 @@ class TodosController < ApplicationController
     todo.destroy
 
     redirect '/todos'
+  end
+
+  private
+
+  def save_redirect_to(path)
+    if @todo.save
+      redirect '/todos'
+    else
+      redirect path
+    end
   end
 end
