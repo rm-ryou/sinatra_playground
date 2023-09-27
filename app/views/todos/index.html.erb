@@ -1,34 +1,44 @@
+<link rel="stylesheet" href="/css/todos.css" />
 <script src="/js/todos.js"></script>
 
-<h1>Todos</h1>
+<div class="todos-sample">
+  <div class="todos-wrapper">
+      <div class="todos">
+        <div class="todos-header">
+          <h2 class="todos-header-title">Todos</h2>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Todo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @todos.each do |todo| %>
-      <tr>
-        <td><%= todo.name %></td>
-        <td><a href="/todos/<%= todo.id %>">Show</a></td>
-        <td><a href="/todos/<%= todo.id %>/edit">Edit</a></td>
-        <%# <td><%= link_to 'Destroy', "/todos/#{todo.id}", method: :delete %1></td> %>
-        <td>
-          <form action="/todos/<%= todo.id %>" method="POST">
-            <input type="hidden" name="_method" value="delete" />
-            <input class="button" onclick="pop_window();" type="submit" value="Delete" />
-          </form>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <div class="todo-wrapper">
+          <% @todos.each do |todo| %>
+            <div class="todo">
+              <h3 class="todo-title">
+                <%= todo.name %>
+              </h3>
+              <nav>
+                <ul>
+                  <li>
+                    <a class="button" href="/todos/<%= todo.id %>">Show</a>
+                  </li>
+                  <li>
+                    <a class="button" href="/todos/<%= todo.id %>/edit">Edit</a>
+                  </li>
+                  <li>
+                    <form action="/todos/<%= todo.id %>" method="post">
+                      <input type="hidden" name="_method" value="delete" />
+                      <input class="button" onclick="pop_window();" type="submit" value="Delete" />
+                    </form>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          <% end %>
 
-<br>
+          <div class="new-todo">
+            <a class="new-todo-link" href="/todos/new">New Todo</a>
+          </div>
+        </div>
 
-<a href="/todos/new">New Todo</a> |
-<a href="/logout">Log Out</a>
+      </div>
+  </div>
+</div>
