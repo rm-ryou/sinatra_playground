@@ -1,4 +1,7 @@
+<script src="/js/hello.js"></script>
+
 <h1>Hello, World</h1>
+<form><input type="button" value="Click" onclick="new_page()"></form>
 <% if logged_in? %>
   <p>
     Hi <%= current_user.name %>
@@ -13,3 +16,4 @@
   <a href="/login">Log In</a> |
   <a href="/signup">Sing Up</a>
 <% end %>
+

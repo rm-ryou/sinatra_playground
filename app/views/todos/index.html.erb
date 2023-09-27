@@ -1,3 +1,5 @@
+<script src="/js/todos.js"></script>
+
 <h1>Todos</h1>
 
 <table>
@@ -18,7 +20,7 @@
         <td>
           <form action="/todos/<%= todo.id %>" method="POST">
             <input type="hidden" name="_method" value="delete" />
-            <input class="btn btn-primary" type="submit" value="Delete" />
+            <input class="button" onclick="pop_window();" type="submit" value="Delete" />
           </form>
         </td>
       </tr>
