@@ -1,5 +1,3 @@
-require 'padrino-helpers'
-
 class ApplicationController < Sinatra::Base
   register Padrino::Helpers
   register Sinatra::Flash
